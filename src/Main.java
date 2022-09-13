@@ -1,38 +1,36 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.TextStyle;
+import java.util.Locale;
+
 public class Main {
     public static void main(String[] args) {
-    //Condicional
-    //Separar por graduação A 80 B 70 C 60 D 0
+        //Olá, {nome}. Hoje é {dia-da-semana}, BOM DIA.
 
-        int nota = 50;
-        String graduacao;
-        if(nota >= 80){
-            graduacao = "A";
-        }else if(nota < 80 && nota >= 70){
-            graduacao = "B";
-        }else if (nota < 70 && nota >= 50){
-            graduacao = "C";
-        } else if(nota < 50 && nota >= 0){
-            graduacao = "D";
+        String nome = "Lucas";
+
+        // ISO 8601
+        LocalDate hoje = LocalDate.now();
+
+        Locale Brasil = new Locale("pt", "br");
+        System.out.println(hoje.getDayOfWeek().getDisplayName(TextStyle.FULL,Brasil));
+
+        String diaDaSemana = hoje.getDayOfWeek().getDisplayName(TextStyle.FULL,Brasil);
+
+        String saudacao;
+
+        LocalDateTime agora = LocalDateTime.now();
+
+        if(agora.getHour() >= 0 && agora.getHour() < 12){
+            saudacao = "bom dia";
+        }else if(agora.getHour() >= 12 && agora.getHour() < 18){
+            saudacao = "boa tarde";
+
+        }else if(agora.getHour() >= 18 && agora.getHour() < 24){
+            saudacao = "boa noite";
         }else{
-            graduacao = "";
+            saudacao="Olá";
         }
-
-        switch (graduacao){
-            case "A":
-            case "B":
-                System.out.println("Aluno Aprovado");
-                break;
-            case "C":
-            case "D":
-                System.out.println("Aluno reprovado");
-                break;
-            default:
-                System.out.println("Graduação inválida");
-        }
-
-
-
-
-
+        System.out.printf("Olá, %s. Hoje é %s, %s.%n", nome, diaDaSemana, saudacao.toUpperCase());
     }
 }
