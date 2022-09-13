@@ -1,18 +1,18 @@
 public class Main {
     public static void main(String[] args) {
+    //boolean
+    //Algoritmo para ir a praia
+    boolean fimDeSemana = true;
+    boolean fazendoSol = false;
+    boolean vamosPraia = fimDeSemana && fazendoSol;
 
-        int a;
-        int b = 2;
-        a = 3;
+    System.out.println(vamosPraia);
+    String mensagem = fimDeSemana? "é fim de semana": "nâo é fim de semana";
 
-        int soma = a + b;
-        int subtracaoo = a - b;
-        int multiplicacao = a * b;
-        float divisao = (float) a / (float) b;
+    System.out.println(mensagem);
 
-        System.out.println(soma);
-        System.out.println(subtracaoo);
-        System.out.println(multiplicacao);
-        System.out.println(divisao);
+
+
+
     }
 }
