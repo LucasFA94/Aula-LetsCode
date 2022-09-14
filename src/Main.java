@@ -11,6 +11,7 @@ public class Main {
 
         int result = soma(2,3);
         System.out.println(result);
+        System.out.println("OK");
     }
 
     public static void saudacao(String nomeParimetro){
